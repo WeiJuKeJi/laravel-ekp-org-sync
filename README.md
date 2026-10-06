@@ -2,11 +2,11 @@
 
 通用 Composer 包 `weijukeji/laravel-ekp-org-sync`。读取蓝凌 EKP 组织接口，把公司、部门、人员、岗位及群组写入 IAM 的可选组织目录，提供全量、增量、定时同步和运行记录。默认关闭，不包含客户地址、凭据或业务公司映射。
 
-源码仓库：[WeiJuKeJi/laravel-ekp-org-sync](https://github.com/WeiJuKeJi/laravel-ekp-org-sync)。当前为 1.0.0 候选源码，尚未创建发布 tag 或发布至 Packagist；配套 IAM 1.5.0 候选源码仍需单独准备。PHP 8.2+，依赖声明 Laravel 11/12/13。实际验证版本与数据库见[协议及验证边界](docs/设计方案/组织同步协议与故障恢复.md)。
+源码仓库：[WeiJuKeJi/laravel-ekp-org-sync](https://github.com/WeiJuKeJi/laravel-ekp-org-sync)。源码版本为 Git 标签 `v1.0.0`，位于 `master` 分支；尚未发布至 Packagist。配套 IAM 1.5.0 候选源码仍需单独准备。PHP 8.2+，依赖声明 Laravel 11/12/13。实际验证版本与数据库见[协议及验证边界](docs/设计方案/组织同步协议与故障恢复.md)。
 
 ## 安装与启用
 
-开发期间在宿主的 composer.json 中添加这两个包的 path 仓库，分别设置本地版本别名 IAM 1.5.0、同步包 1.0.0；仓库相对路径由宿主决定。Composer 不继承依赖包内的 repositories 配置，必须在宿主声明两个仓库。生产发布前换成已审核的真实 tag 与锁文件，不把本地别名当作发布记录。
+开发期间在宿主的 composer.json 中添加这两个包的 path 仓库，分别设置本地版本别名 IAM 1.5.0、同步包 1.0.0；仓库相对路径由宿主决定。Composer 不继承依赖包内的 repositories 配置，必须在宿主声明两个仓库。本扩展源码可锁定到 `v1.0.0`；配套 IAM 仍使用本地候选源码。生产部署前须准备可安装的 IAM 版本和宿主锁文件，不把本地别名当作 IAM 的发布记录。
 
 ```json
 {"type":"path","url":"/path/to/laravel-iam","options":{"symlink":true,"versions":{"weijukeji/laravel-iam":"1.5.0"}}}
