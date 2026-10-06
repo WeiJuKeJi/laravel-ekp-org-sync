@@ -1,0 +1,45 @@
+{
+    "name": "weijukeji/laravel-ekp-org-sync",
+    "description": "Reusable EKP organization synchronization into the optional Laravel IAM directory",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/http": "^11.0 || ^12.0 || ^13.0",
+        "weijukeji/laravel-iam": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "WeiJuKeJi\\LaravelEkpOrgSync\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "WeiJuKeJi\\LaravelEkpOrgSync\\EkpOrgSyncServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0 || ^10.0 || ^11.0",
+        "phpunit/phpunit": "^11.0 || ^12.0 || ^13.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WeiJuKeJi\\LaravelEkpOrgSync\\Tests\\": "tests/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../laravel-iam",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "weijukeji/laravel-iam": "1.5.0"
+                }
+            }
+        }
+    ]
+}
